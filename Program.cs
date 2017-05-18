@@ -298,7 +298,7 @@ namespace ghs_demangle
                     if (end != -1)
                     {
                         bool valid = true;
-
+                       
                         /* check all characters between Js are digits */
                         for (int i = start + 1; i < end; i++)
                             if (!char.IsNumber(name[i]))
@@ -306,6 +306,8 @@ namespace ghs_demangle
                                 valid = false;
                                 break;
                             }
+
+                        if (end > start) valid = false;
 
                         if (valid)
                         {
